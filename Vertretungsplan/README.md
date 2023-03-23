@@ -34,4 +34,4 @@ for i in data_tomorrow: # goes through first loop
     print("") # makes backslash
 ```
 
-There are still some changes to make and features to add and I will keep updating this repositorie.
+There are still some changes to make and features to add. Work in progress ...
