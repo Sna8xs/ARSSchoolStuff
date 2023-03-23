@@ -33,3 +33,5 @@ for i in data_tomorrow: # goes through first loop
         print(j.ljust(21), end="") # prints data without backslash
     print("") # makes backslash
 ```
+
+There are still some changes to make and features to add and I will keep updating this repositorie.
