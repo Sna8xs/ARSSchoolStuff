@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 class Plan:
-    def __init__(self, Class="", urltoday="https://adolf-reichwein-schule.de/fileadmin/home/nichtImMenue/vertretungsplan/schueler/heute/subst_001.htm", urltomorror="https://adolf-reichwein-schule.de/fileadmin/home/nichtImMenue/vertretungsplan/schueler/morgen/subst_001.htm"):
+    def __init__(self, Class="", urltoday="https://adolf-reichwein-schule.de/fileadmin/home/nichtImMenue/vertretungsplan/schueler/heute/subst_001.htm", urltomorrow="https://adolf-reichwein-schule.de/fileadmin/home/nichtImMenue/vertretungsplan/schueler/morgen/subst_001.htm"):
         self.__CLASS = Class
         self.__URLTODAY = urltoday
-        self.__URLTOMORROR = urltomorror
+        self.__URLTOMORROW = urltomorrow
         self.__FORMAT_IN = ["day", "date", "hour", "room", "type", "class", "teacher", "ver_teacher", "task"]
 
     def getToday(self):
@@ -34,7 +34,7 @@ class Plan:
         return DATA
     def getTomorror(self):
         DATA = []
-        website = requests.get(self.__URLTOMORROR)
+        website = requests.get(self.__URLTOMORROW)
         bs = BeautifulSoup(website.content, 'html.parser')
 
         raw_list = bs.find_all('td', class_='list')
